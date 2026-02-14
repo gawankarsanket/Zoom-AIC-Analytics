@@ -1,0 +1,5 @@
+ID,Host email,Department,Meeting summary with AI Companion,External Ratio
+1,john@globalenterprise.com,Engineering,TRUE,0.6
+2,john@globalenterprise.com,Engineering,FALSE,0.1
+3,jane@globalenterprise.com,Banking & Finance,TRUE,0.7
+4,jane@globalenterprise.com,Banking & Finance,FALSE,0

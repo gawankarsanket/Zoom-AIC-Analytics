@@ -30,7 +30,11 @@ async def process_month(
     current_metrics = compute_metrics(df_users, df_meetings, df_aic)
 
     # Parse previous metrics JSON if provided
-    prev_metrics_dict = json.loads(previous_metrics) if previous_metrics else None
+    prev_metrics_dict = None
+
+    if previous_metrics and previous_metrics.strip() not in ["", "null"]:
+        prev_metrics_dict = json.loads(previous_metrics)
+    
 
     # Compute delta
     metrics_with_delta = compute_delta(current_metrics, prev_metrics_dict)

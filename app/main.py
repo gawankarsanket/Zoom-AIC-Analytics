@@ -32,8 +32,17 @@ async def process_month(
     # Parse previous metrics JSON if provided
     prev_metrics_dict = None
 
-    if previous_metrics and previous_metrics.strip() not in ["", "null"]:
-        prev_metrics_dict = json.loads(previous_metrics)
+    if previous_metrics:
+        previous_metrics = previous_metrics.strip()
+        if previous_metrics and previous_metrics != "null":
+            try:
+                prev_metrics_dict = json.loads(previous_metrics)
+            
+            except json.JSONDecodeError:
+                prev_metrics_dict = None
+                
+
+
     
 
     # Compute delta

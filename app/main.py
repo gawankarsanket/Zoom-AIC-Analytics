@@ -46,6 +46,10 @@ async def process_month(
     
 
     # Compute delta
+
+    print("Previous metrics dict:", prev_metrics_dict)
+    print("Type:", type(prev_metrics_dict))
+
     metrics_with_delta = compute_delta(current_metrics, prev_metrics_dict)
 
     # Compute status classification
